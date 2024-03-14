@@ -9,6 +9,7 @@ router.get('/confirmemail/":token',authcontroller.confirmemail);
 router.get('/signin',validation(signin),authcontroller.signin);
 router.get('/sendcode',authcontroller.sendcode);
 router.get('/forgetpassword',authcontroller.forgetpassword);
+router.get('/qrcode_alluser',authcontroller.qrcode);
 
 
 module.exports=router; 

@@ -4,6 +4,8 @@ const {userModel} = require("../../../DB/model/user.model");
 const { sendemail } = require('../../../services/email');
 let jwt = require('jsonwebtoken');
 const {nanoid}= require('nanoid');
+var QRCode = require('qrcode')
+
 
 const signUp = async (req,res)=>{
 
@@ -145,4 +147,11 @@ const forgetpassword = async(req,res)=>{
     
 }
 
-module.exports={signUp,confirmemail,signin,sendcode,forgetpassword}
+const qrcode = async (req,res)=>{
+
+    QRCode.toDataURL('hi hi hi!', function (err, url) {
+        console.log(url)
+      })
+
+}
+module.exports={qrcode, signUp,confirmemail,signin,sendcode,forgetpassword}
